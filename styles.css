@@ -1,0 +1,268 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    color: #fff;
+    position: relative;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-nav li {
+    margin-right: 1rem;
+}
+
+.navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+#search-input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+}
+
+#search-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+    z-index: 10; /* Ensures it stays above other elements */
+}
+
+.theme-toggle span {
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+body.dark-theme .theme-toggle span {
+    color: #ffeb3b;
+}
+
+.top-podcasts {
+    padding: 2rem;
+    text-align: center;
+}
+
+.top-podcasts h1,
+.top-podcasts h2 {
+    margin: 0.5rem 0;
+}
+
+.podcast-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 0.5rem; /* Reduced spacing between cards */
+    padding: 1rem;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem; /* Reduced padding inside cards */
+    margin: 0; /* Ensure no extra margins are added */
+    position: relative;
+}
+
+.card img {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.listen-button {
+    margin-top: 0.5rem; /* Reduced margin for listen button */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.listen-button:hover {
+    background-color: #0056b3;
+}
+
+.audio-player {
+    width: 100%;
+    margin-top: 0.5rem; /* Reduced margin for audio player */
+}
+
+.show-all {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.show-all:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+/* Media Queries for Responsiveness */
+
+/* For tablets (up to 768px width) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-container {
+        margin: 0;
+        width: 100%;
+    }
+
+    #search-button {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .theme-toggle {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+
+    .top-podcasts {
+        padding: 1rem;
+    }
+
+    .podcast-cards {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}
+
+/* For mobile phones (up to 480px width) */
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    #search-input {
+        font-size: 0.9rem;
+    }
+
+    #search-button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    .show-all {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #fff;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensure spinner appears above other content */
+}
