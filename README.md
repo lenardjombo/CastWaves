@@ -50,10 +50,11 @@ To get started with the Castwaves project, follow these steps:
    ```
 2. Navigate the project directory
    ```sh
-  cd castwaves
-   ```
-3. Open the Project`
-   ```Open the index.html file in your preferred web browser to view the project.;
+     cd castwaves
+  ```
+3. Open the Project
+   ```sh
+     Open the index.html file in your preferred web browser to view the project.
    ```
 4.Explore the Code
   HTML: Check the index.html file for the core structure of the application.
